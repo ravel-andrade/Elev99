@@ -1,0 +1,36 @@
+﻿@model Elev99.Models.CollectedData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CollectedData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Elevator)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Elevator)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Shift)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

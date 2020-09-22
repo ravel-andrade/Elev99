@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Elev99.Data;
 
 namespace Elev99
 {
@@ -33,6 +35,10 @@ namespace Elev99
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<Elev99Context>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("Elev99Context"), builder =>
+                    builder.MigrationsAssembly("Elev99")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
