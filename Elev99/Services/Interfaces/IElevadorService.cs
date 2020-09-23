@@ -7,27 +7,27 @@ namespace Elev99.Services.Interfaces
 {
     interface IElevadorService
     {
-        
-        List<int> andarMenosUtilizado();
 
-        List<char> elevadorMaisFrequentado();
-       
-        List<char> periodoMaiorFluxoElevadorMaisFrequentado();
-        
-        List<char> elevadorMenosFrequentado();
-        
-        List<char> periodoMenorFluxoElevadorMenosFrequentado();
+        Task<List<int>> andarMenosUtilizadoAsync();
+
+        Task<List<char>> elevadorMaisFrequentadoAsync();
+
+        Task<List<char>> periodoMaiorFluxoElevadorMaisFrequentadoAsync();
+
+        Task<List<char>> elevadorMenosFrequentadoAsync();
+
+        Task<List<char>> periodoMenorFluxoElevadorMenosFrequentadoAsync();
       
-        List<char> periodoMaiorUtilizacaoConjuntoElevadores();
-        
-        float percentualDeUsoElevadorA();
-       
-        float percentualDeUsoElevadorB();
-       
-        float percentualDeUsoElevadorC();
+        Task<List<char>> periodoMaiorUtilizacaoConjuntoElevadoresAsync();
 
-        float percentualDeUsoElevadorD();
+        Task<float> percentualDeUsoElevadorAAsync();
 
-        float percentualDeUsoElevadorE();
+        Task<float> percentualDeUsoElevadorBAsync();
+
+        Task<float> percentualDeUsoElevadorCAsync();
+
+        Task<float> percentualDeUsoElevadorDAsync();
+
+        Task<float> percentualDeUsoElevadorEAsync();
     }
 }
