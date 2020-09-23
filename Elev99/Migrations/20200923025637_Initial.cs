@@ -14,8 +14,8 @@ namespace Elev99.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Floor = table.Column<int>(nullable: false),
-                    Elevator = table.Column<string>(nullable: true),
-                    Shift = table.Column<string>(nullable: true)
+                    Elevator = table.Column<string>(nullable: false),
+                    Shift = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

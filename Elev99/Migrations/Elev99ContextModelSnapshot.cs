@@ -21,11 +21,15 @@ namespace Elev99.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Elevator");
+                    b.Property<string>("Elevator")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 1)));
 
                     b.Property<int>("Floor");
 
-                    b.Property<string>("Shift");
+                    b.Property<string>("Shift")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 1)));
 
                     b.HasKey("Id");
 

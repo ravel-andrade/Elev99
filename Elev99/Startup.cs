@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Elev99.Data;
+using Elev99.Services;
 
 namespace Elev99
 {
@@ -41,6 +42,7 @@ namespace Elev99
                     builder.MigrationsAssembly("Elev99")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<CollectedDataService>();
         
         }
 

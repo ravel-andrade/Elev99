@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Elev99.Data;
 using Elev99.Models;
+using Elev99.Services;
 
 namespace Elev99.Controllers
 {
     public class CollectedDatasController : Controller
     {
+        private readonly CollectedDataService _collectedDataService;
         private readonly Elev99Context _context;
 
         public CollectedDatasController(Elev99Context context)
@@ -59,6 +61,8 @@ namespace Elev99.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(collectedData);
+                _collectedDataService.andarMenosUtilizado();
+                _collectedDataService.andarMenosUtilizado();
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

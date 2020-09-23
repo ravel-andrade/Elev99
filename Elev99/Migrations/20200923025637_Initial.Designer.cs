@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elev99.Migrations
 {
     [DbContext(typeof(Elev99Context))]
-    [Migration("20200922214623_Initial")]
+    [Migration("20200923025637_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,11 +23,15 @@ namespace Elev99.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Elevator");
+                    b.Property<string>("Elevator")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 1)));
 
                     b.Property<int>("Floor");
 
-                    b.Property<string>("Shift");
+                    b.Property<string>("Shift")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 1)));
 
                     b.HasKey("Id");
 
