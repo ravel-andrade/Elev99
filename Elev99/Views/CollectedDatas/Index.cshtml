@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Elev99.Models.CollectedData>
+﻿@model PaginatedList<Elev99.Models.CollectedData>
 
 @{
     ViewData["Title"] = "Dados";
@@ -45,3 +45,19 @@
 }
     </tbody>
 </table>
+
+@{ 
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-pageNumber ="@(Model.PageIndex -1)"
+   class="btn btn-default @prevDisabled" >
+    Anterior
+</a>
+<a asp-action="Index"
+   asp-route-pageNumber ="@(Model.PageIndex + 1)"
+   class="btn btn-default @nextDisabled" >
+    Proxima
+</a>

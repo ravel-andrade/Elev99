@@ -22,9 +22,10 @@ namespace Elev99.Controllers
         }
 
         // GET: CollectedDatas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber = 1)
         {
-            return View(await _context.CollectedData.ToListAsync());
+            
+            return View(await PaginatedList<CollectedData>.CreateAsync(_context.CollectedData, pageNumber, 5));
         }
 
         // GET: CollectedDatas/Details/5
