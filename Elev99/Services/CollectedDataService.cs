@@ -15,7 +15,6 @@ namespace Elev99.Services
 {
     public class CollectedDataService : IElevadorService
     {
-        
         private readonly Elev99Context _context;
 
         public CollectedDataService(Elev99Context context)
@@ -220,6 +219,7 @@ namespace Elev99.Services
             
         }
 
-        
-    }
+    
+
+}
 }

@@ -1,14 +1,52 @@
 ﻿@model Elev99.Models.ViewModels.ConvertedInfo
-
-<h1>@Html.DisplayFor(model => model.percentualDeUsoElevadorA)</h1>
-<h1>@Html.DisplayFor(model => model.percentualDeUsoElevadorB)</h1>
-<h1>@Html.DisplayFor(model => model.percentualDeUsoElevadorC)</h1>
-<h1>@Html.DisplayFor(model => model.percentualDeUsoElevadorD)</h1>
-<h1>@Html.DisplayFor(model => model.percentualDeUsoElevadorE)</h1>
-<h1>Andar menos utilizado @Html.DisplayFor(model => model.andarMenosUtilizado)</h1>
-<h1>Elevador mais frequentado @Html.DisplayFor(model => model.elevadorMaisFrequentado)</h1>
-<h1>Elevador menos frequentado @Html.DisplayFor(model => model.elevadorMenosFrequentado)</h1>
-<h1>Periodo maior fluxo emf @Html.DisplayFor(model => model.periodoMaiorFluxoElevadorMaisFrequentado)</h1>
-<h1>Periodo maior utilização elevadores @Html.DisplayFor(model => model.periodoMaiorUtilizacaoConjuntoElevadores)</h1>
-<h1>periodo menor fluxo elevador menos frequentado @Html.DisplayFor(model => model.periodoMenorFluxoElevadorMenosFrequentado)</h1>
+    <h2 style="text-align:center">Relatório</h2>
+<div class="row" style="text-align:center">
+    <h3>Percentual de uso do elevador A: @Html.DisplayFor(model => model.percentualDeUsoElevadorA)%</h3>
+    <h3>Percentual de uso do elevador B: @Html.DisplayFor(model => model.percentualDeUsoElevadorB)%</h3>
+    <h3>Percentual de uso do elevador C: @Html.DisplayFor(model => model.percentualDeUsoElevadorC)%</h3>
+    <h3>Percentual de uso do elevador D: @Html.DisplayFor(model => model.percentualDeUsoElevadorD)%</h3>
+    <h3>Percentual de uso do elevador E: @Html.DisplayFor(model => model.percentualDeUsoElevadorE)%</h3>
+    <h3>
+        Andar(es) menos utilizado(s): @for (var i = 0; i < Model.andarMenosUtilizado.Count(); i++)
+        {
+            @Html.DisplayFor(o => o.andarMenosUtilizado[i]);
+            <text> </text>
+        } 
+    </h3>
+    <h3>
+        Elevador mais utilizado:  @for (var i = 0; i < Model.elevadorMaisFrequentado.Count(); i++)
+        {
+            @Html.DisplayFor(o => o.elevadorMaisFrequentado[i]);
+            <text> </text>
+        }
+    </h3>
+    <h3>
+        Elevador menos utilizado: @for (var i = 0; i < Model.elevadorMenosFrequentado.Count(); i++)
+        {
+            @Html.DisplayFor(o => o.elevadorMenosFrequentado[i]);
+            <text> </text>
+        }
+    </h3>
+    <h3>
+        Periodo de maior fluxo do(s) elevador(es) mais utilizado(s):  @for (var i = 0; i < Model.periodoMaiorFluxoElevadorMaisFrequentado.Count(); i++)
+        {
+            @Html.DisplayFor(o => o.periodoMaiorFluxoElevadorMaisFrequentado[i]);
+            <text> </text>
+        }
+    </h3>
+    <h3>
+        Periodo de menor fluxo do(s) elevador(es) menos utilizado(s): @for (var i = 0; i < Model.periodoMenorFluxoElevadorMenosFrequentado.Count(); i++)
+        {
+            @Html.DisplayFor(o => o.periodoMenorFluxoElevadorMenosFrequentado[i]);
+            <text> </text>
+        }
+    </h3>
+    <h3>
+        Periodo de maior utilização dos elevadores: @for (var i = 0; i < Model.periodoMaiorUtilizacaoConjuntoElevadores.Count(); i++)
+        {
+            @Html.DisplayFor(o => o.periodoMaiorUtilizacaoConjuntoElevadores[i]);
+            <text> </text>
+        }
+    </h3>
+</div>
 

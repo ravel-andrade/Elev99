@@ -1,30 +1,30 @@
 ﻿@model Elev99.Models.CollectedData
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Deletar";
 }
 
-<h2>Delete</h2>
+<h2>Deletar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Tem certeza que irá deletar isso?</h3>
 <div>
-    <h4>CollectedData</h4>
+    <h4> </h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Floor)
+           Andar
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Floor)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Elevator)
+            Elevador
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Elevator)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Shift)
+            Turno
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Shift)
@@ -33,7 +33,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar</a>
     </form>
 </div>

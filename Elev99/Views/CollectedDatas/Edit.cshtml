@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar</h2>
 
-<h4>CollectedData</h4>
+<h4>Formulário</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,29 +14,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Floor" class="control-label"></label>
+                <label asp-for="Floor" class="control-label">Andar</label>
                 <input asp-for="Floor" class="form-control" />
-                <span asp-validation-for="Floor" class="text-danger"></span>
+                <span asp-validation-for="Floor" class="text-danger">(1 - 15)</span>
             </div>
             <div class="form-group">
-                <label asp-for="Elevator" class="control-label"></label>
+                <label asp-for="Elevator" class="control-label">Elevador</label>
                 <input asp-for="Elevator" class="form-control" />
-                <span asp-validation-for="Elevator" class="text-danger"></span>
+                <span asp-validation-for="Elevator" class="text-danger">(A, B, C, D ou E)</span>
             </div>
             <div class="form-group">
-                <label asp-for="Shift" class="control-label"></label>
+                <label asp-for="Shift" class="control-label">Turno</label>
                 <input asp-for="Shift" class="form-control" />
-                <span asp-validation-for="Shift" class="text-danger"></span>
+                <span asp-validation-for="Shift" class="text-danger">("V" - "N" - "M")</span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {

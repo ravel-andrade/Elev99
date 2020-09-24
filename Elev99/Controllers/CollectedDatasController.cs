@@ -153,5 +153,7 @@ namespace Elev99.Controllers
         {
             return _context.CollectedData.Any(e => e.Id == id);
         }
+
+        
     }
 }

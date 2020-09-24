@@ -1,29 +1,29 @@
 ﻿@model Elev99.Models.CollectedData
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>CollectedData</h4>
+    <h4> </h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Floor)
+            Andar
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Floor)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Elevator)
+            Elevador
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Elevator)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Shift)
+            Turno
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Shift)
@@ -31,6 +31,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar</a>
 </div>
