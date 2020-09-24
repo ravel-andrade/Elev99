@@ -25,7 +25,7 @@ namespace Elev99.Controllers
         public async Task<IActionResult> Index(int pageNumber = 1)
         {
             
-            return View(await PaginatedList<CollectedData>.CreateAsync(_context.CollectedData, pageNumber, 5));
+            return View(await PaginatedList<CollectedData>.CreateAsync(_context.CollectedData, pageNumber, 8));
         }
 
         // GET: CollectedDatas/Details/5
