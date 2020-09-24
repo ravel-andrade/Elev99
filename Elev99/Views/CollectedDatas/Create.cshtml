@@ -19,13 +19,25 @@
             </div>
             <div class="form-group">
                 <label asp-for="Elevator" class="control-label">Elevador</label>
-                <input asp-for="Elevator" class="form-control" />
-                <span asp-validation-for="Elevator" class="text-danger">(A, B, C, D ou E)</span>
+                <select class="form-control" asp-for="Elevator">
+                    <option value="">Selecione um elevador</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                </select>
+                <span asp-validation-for="Elevator" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Shift" class="control-label">Turno</label>
-                <input asp-for="Shift" max="1"class="form-control" />
-                <span asp-validation-for="Shift" class="text-danger">("V" - "N" - "M")</span>
+                <select class="form-control " asp-for="Shift">
+                    <option value="">Selecione um turno</option>
+                    <option value="V">V</option>
+                    <option value="N">N</option>
+                    <option value="M">M</option>
+                </select>
+                <span asp-validation-for="Shift" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-default" />

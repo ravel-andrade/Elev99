@@ -9,12 +9,13 @@ namespace Elev99.Models
     public class CollectedData : IComparable
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "o campo 'andar' é obrigatório")]
         [Range(1,15, ErrorMessage = "Andar aceita apenas valores de 0 à 10")]
         public int Floor { get; set; }
-        [StringLength(1, ErrorMessage ="Elevador aceita apenas A, B, C, D OU E")]
+        [Required(ErrorMessage = "o campo 'elevador' é obrigatório")]
+        
         public char Elevator { get; set; }
-        [StringLength(1, ErrorMessage = "Turno aceita apenas M, N OU V")]
+        [Required(ErrorMessage = "o campo 'turno' é obrigatório")]
         public char Shift { get; set; }
 
         public CollectedData()

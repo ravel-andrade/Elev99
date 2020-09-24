@@ -61,8 +61,6 @@ namespace Elev99.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(collectedData);
-                _collectedDataService.andarMenosUtilizadoAsync();
-                _collectedDataService.andarMenosUtilizadoAsync();
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
